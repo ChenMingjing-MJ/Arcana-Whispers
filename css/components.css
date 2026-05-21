@@ -50,6 +50,25 @@
   border-left: 3px solid var(--accent-gold);
   padding: var(--space-lg) var(--space-xl);
   margin-bottom: var(--space-md);
+  position: relative;
+}
+
+/* Subtle four-pointed star flourish in upper-right corner */
+.interpretation-card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 L13.5 10.5 L24 12 L13.5 13.5 L12 24 L10.5 13.5 L0 12 L10.5 10.5 Z' fill='%23d4a056' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+body.light-theme .interpretation-card::after {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 L13.5 10.5 L24 12 L13.5 13.5 L12 24 L10.5 13.5 L0 12 L10.5 10.5 Z' fill='%238b6914' opacity='0.7'/%3E%3C/svg%3E");
 }
 
 .interpretation-card-header {

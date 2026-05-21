@@ -68,6 +68,34 @@ body.light-theme {
 
 .home-header {
   padding-left: var(--space-lg);
+  position: relative;
+}
+
+/* Celestial hero emblem (sun + eye + moons + star) */
+.hero-emblem {
+  display: block;
+  width: clamp(140px, 22vw, 200px);
+  height: auto;
+  color: var(--accent-gold);
+  margin-bottom: var(--space-md);
+  margin-left: -8px;
+  filter: drop-shadow(0 0 12px var(--accent-glow));
+  animation: emblem-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes emblem-glow {
+  from { opacity: 0.82; filter: drop-shadow(0 0 8px var(--accent-glow)); }
+  to   { opacity: 1;    filter: drop-shadow(0 0 18px var(--accent-glow)); }
+}
+
+/* Ornamental divider under header */
+.ornament-divider {
+  display: block;
+  width: min(320px, 60vw);
+  height: 16px;
+  margin-top: var(--space-lg);
+  color: var(--accent-gold);
+  opacity: 0.85;
 }
 
 .site-title {
@@ -115,6 +143,26 @@ body.light-theme {
   border-bottom-color: var(--accent-gold);
 }
 
+.spread-option-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Glyph icon next to spread title */
+.spread-glyph {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color 0.25s ease, transform 0.35s var(--ease-bounce);
+}
+
+.spread-option:hover .spread-glyph {
+  color: var(--accent-gold);
+  transform: rotate(-4deg) scale(1.08);
+}
+
 .spread-option-left h3 {
   font-family: var(--font-heading);
   color: var(--text-primary);
@@ -157,6 +205,19 @@ body.light-theme {
   text-align: left;
   width: 100%;
   padding-left: var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-md);
+  row-gap: 2px;
+}
+
+.reading-glyph {
+  width: 22px;
+  height: 22px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+  align-self: center;
 }
 
 .reading-header h2 {
@@ -165,6 +226,10 @@ body.light-theme {
   color: var(--text-primary);
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+.reading-header p {
+  width: 100%;
 }
 
 .reading-header p {
@@ -298,6 +363,15 @@ body.light-theme .theme-icon-light {
 
   .spread-option-right {
     text-align: left;
+  }
+
+  .spread-glyph {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-emblem {
+    width: clamp(120px, 30vw, 160px);
   }
 
   #spread-area {
