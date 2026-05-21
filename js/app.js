@@ -4,7 +4,7 @@
 // === TRANSLATIONS ===
 var I18N = {
   en: {
-    siteTitle: 'Tarot Reading',
+    siteTitle: 'Arcana Whispers',
     siteSubtitle: 'Draw the cards and discover what the universe has to tell you',
     singleTitle: 'Single Card',
     singleDesc: 'Quick insight and guidance',
@@ -40,7 +40,7 @@ var I18N = {
     upright: 'Upright'
   },
   zh: {
-    siteTitle: '塔罗牌占卜',
+    siteTitle: 'Arcana Whispers',
     siteSubtitle: '抽取卡牌，聆听宇宙的启示',
     singleTitle: '单张牌',
     singleDesc: '快速洞察与指引',
@@ -76,7 +76,7 @@ var I18N = {
     upright: '正位'
   },
   ja: {
-    siteTitle: 'タロット占い',
+    siteTitle: 'Arcana Whispers',
     siteSubtitle: 'カードを引いて、宇宙のメッセージを受け取りましょう',
     singleTitle: '1枚引き',
     singleDesc: '素早い洞察とガイダンス',
@@ -112,7 +112,7 @@ var I18N = {
     upright: '正位置'
   },
   ko: {
-    siteTitle: '타로 점',
+    siteTitle: 'Arcana Whispers',
     siteSubtitle: '카드를 뽑아 우주의 메시지를 들어보세요',
     singleTitle: '원카드',
     singleDesc: '빠른 통찰과 안내',

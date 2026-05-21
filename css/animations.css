@@ -1,8 +1,8 @@
 /* Shuffle animation */
 @keyframes shuffle-scatter {
   0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-  30% { transform: translate(var(--sx), var(--sy)) rotate(var(--sr)); opacity: 0.7; }
-  70% { transform: translate(var(--gx), var(--gy)) rotate(var(--gr)); opacity: 0.8; }
+  30% { transform: translate(var(--sx), var(--sy)) rotate(var(--sr)); opacity: 0.8; }
+  70% { transform: translate(var(--gx), var(--gy)) rotate(var(--gr)); opacity: 0.9; }
   100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
 }
 
@@ -10,13 +10,15 @@
   animation: shuffle-scatter var(--shuffle-duration) var(--ease-smooth);
 }
 
-/* Card deal from deck */
+/* Card deal — slide in from left */
 @keyframes deal-card {
   0% {
     opacity: 0;
+    transform: translateX(-30px);
   }
   100% {
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -26,7 +28,7 @@
 
 /* Fade in */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -37,7 +39,7 @@
 
 /* Slide up (for interpretation panel) */
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -58,17 +60,42 @@
 .stagger-9 { animation-delay: 0.9s; }
 .stagger-10 { animation-delay: 1.0s; }
 
-/* Background ambient animation */
-@keyframes bg-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Blinking stars */
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
-.ambient-bg {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
-  background-size: 400% 400%;
-  animation: bg-shift 15s ease infinite;
+.falling-stars {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
+
+.falling-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: blink ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.falling-star:nth-child(1) { top: 8%; left: 12%; animation-duration: 3s; animation-delay: 0s; }
+.falling-star:nth-child(2) { top: 15%; left: 45%; animation-duration: 4s; animation-delay: 1.2s; width: 1.5px; height: 1.5px; }
+.falling-star:nth-child(3) { top: 5%; left: 72%; animation-duration: 3.5s; animation-delay: 0.5s; width: 2.5px; height: 2.5px; }
+.falling-star:nth-child(4) { top: 25%; left: 88%; animation-duration: 5s; animation-delay: 2s; }
+.falling-star:nth-child(5) { top: 35%; left: 8%; animation-duration: 4.5s; animation-delay: 0.8s; width: 1.5px; height: 1.5px; }
+.falling-star:nth-child(6) { top: 42%; left: 62%; animation-duration: 3.8s; animation-delay: 3s; width: 2.5px; height: 2.5px; }
+.falling-star:nth-child(7) { top: 55%; left: 30%; animation-duration: 4.2s; animation-delay: 1.5s; }
+.falling-star:nth-child(8) { top: 48%; left: 92%; animation-duration: 3.2s; animation-delay: 2.5s; width: 1.5px; height: 1.5px; }
+.falling-star:nth-child(9) { top: 68%; left: 18%; animation-duration: 5.5s; animation-delay: 0.3s; width: 2.5px; height: 2.5px; }
+.falling-star:nth-child(10) { top: 75%; left: 78%; animation-duration: 4s; animation-delay: 1.8s; }
+.falling-star:nth-child(11) { top: 82%; left: 52%; animation-duration: 3.6s; animation-delay: 3.5s; width: 1.5px; height: 1.5px; }
+.falling-star:nth-child(12) { top: 92%; left: 35%; animation-duration: 4.8s; animation-delay: 0.7s; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

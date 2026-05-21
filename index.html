@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarot Reading</title>
+  <title>Arcana Whispers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -11,7 +14,21 @@
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body class="ambient-bg">
+<body>
+  <div class="falling-stars">
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+    <div class="falling-star"></div>
+  </div>
   <div class="controls-bar">
     <div class="lang-selector">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -38,27 +55,39 @@
     <!-- Home Screen -->
     <section id="screen-home" class="screen active">
       <div class="home-header">
-        <h1 class="site-title" data-i18n="siteTitle">Tarot Reading</h1>
+        <h1 class="site-title" data-i18n="siteTitle">Arcana Whispers</h1>
         <p class="site-subtitle" data-i18n="siteSubtitle">Draw the cards and discover what the universe has to tell you</p>
       </div>
 
       <div class="spread-options">
         <button class="spread-option" data-spread="single">
-          <h3 data-i18n="singleTitle">Single Card</h3>
-          <p data-i18n="singleDesc">Quick insight and guidance</p>
-          <span class="card-count" data-i18n="singleCount">1 card</span>
+          <div class="spread-option-left">
+            <h3 data-i18n="singleTitle">Single Card</h3>
+          </div>
+          <div class="spread-option-right">
+            <p data-i18n="singleDesc">Quick insight and guidance</p>
+            <span class="card-count" data-i18n="singleCount">1 card</span>
+          </div>
         </button>
 
         <button class="spread-option" data-spread="threeCard">
-          <h3 data-i18n="threeTitle">Three Card Spread</h3>
-          <p data-i18n="threeDesc">Past, present, and future</p>
-          <span class="card-count" data-i18n="threeCount">3 cards</span>
+          <div class="spread-option-left">
+            <h3 data-i18n="threeTitle">Three Card Spread</h3>
+          </div>
+          <div class="spread-option-right">
+            <p data-i18n="threeDesc">Past, present, and future</p>
+            <span class="card-count" data-i18n="threeCount">3 cards</span>
+          </div>
         </button>
 
         <button class="spread-option" data-spread="celticCross">
-          <h3 data-i18n="crossTitle">Celtic Cross</h3>
-          <p data-i18n="crossDesc">Deep comprehensive reading</p>
-          <span class="card-count" data-i18n="crossCount">10 cards</span>
+          <div class="spread-option-left">
+            <h3 data-i18n="crossTitle">Celtic Cross</h3>
+          </div>
+          <div class="spread-option-right">
+            <p data-i18n="crossDesc">Deep comprehensive reading</p>
+            <span class="card-count" data-i18n="crossCount">10 cards</span>
+          </div>
         </button>
       </div>
     </section>
