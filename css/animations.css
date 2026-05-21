@@ -1,0 +1,80 @@
+/* Shuffle animation */
+@keyframes shuffle-scatter {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  30% { transform: translate(var(--sx), var(--sy)) rotate(var(--sr)); opacity: 0.7; }
+  70% { transform: translate(var(--gx), var(--gy)) rotate(var(--gr)); opacity: 0.8; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+}
+
+.deck-card.shuffling {
+  animation: shuffle-scatter var(--shuffle-duration) var(--ease-smooth);
+}
+
+/* Card deal from deck */
+@keyframes deal-card {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-container.dealing {
+  animation: deal-card 0.4s ease-out;
+}
+
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fade-in 0.4s var(--ease-smooth) forwards;
+  opacity: 0;
+}
+
+/* Slide up (for interpretation panel) */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slide-up 0.5s var(--ease-smooth) forwards;
+  opacity: 0;
+}
+
+/* Staggered delay utility */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+.stagger-9 { animation-delay: 0.9s; }
+.stagger-10 { animation-delay: 1.0s; }
+
+/* Background ambient animation */
+@keyframes bg-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.ambient-bg {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  background-size: 400% 400%;
+  animation: bg-shift 15s ease infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
